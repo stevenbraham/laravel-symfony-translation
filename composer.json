@@ -1,0 +1,41 @@
+{
+    "name": "stevenbraham/laravel-symfony-translation",
+    "description": "Use the Symfony translation component in Laravel",
+    "type": "library",
+    "license": "CC-BY-SA-4.0",
+    "homepage": "https://github.com/stevenbraham/laravel-symfony-translation",
+    "readme": "README.md",
+    "autoload": {
+        "psr-4": {
+            "StevenBraham\\LaravelSymfonyTranslation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Steven Braham",
+            "email": "steven@braham.biz"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "symfony",
+        "translation",
+        "i18n"
+    ],
+    "require": {
+        "php": "^7.0||^8.0",
+        "laravel/framework": "^5.5||^6.0||^7.0||^8.0||^9.0",
+        "riimu/kit-pathjoin": "^1.2",
+        "symfony/translation": "^6.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "StevenBraham\\LaravelSymfonyTranslation\\LaravelSymfonyTranslationServiceProvider"
+            ],
+            "aliases": {
+                "SymfonyTranslation": "StevenBraham\\LaravelSymfonyTranslation\\Facades\\SymfonyTranslation"
+            }
+        }
+    }
+}
