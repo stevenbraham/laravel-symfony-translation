@@ -23,14 +23,14 @@ class LaravelSymfonyTranslationServiceProvider extends ServiceProvider
         // setup the translator component and bind it to the container
         $this->app->bind(Translator::class, function ($app) {
             $locale = config('app.locale');
-            $defaultLocale = config('symfony-translation.defaultLocale');
+            $defaultLocale = config('symfony-translation.defaultLocale', 'en');
 
 
 
             $translator = new Translator($locale);
             $translator->setFallbackLocales([$defaultLocale]);
             $translator->addLoader('json', new JsonFileLoader());
-            $languagesPath = config('symfony-translation.translationsFolder');
+            $languagesPath = config('symfony-translation.translationsFolder', base_path("lang"));
 
 
             if ($locale !== $defaultLocale) {
