@@ -11,10 +11,10 @@ eg:
 }
 ```
 
-In Laravel you would need to create a seperate `navbar.json` and `homePage.json` file, but no if using the Symfony translator.
+In Laravel you would need to create a seperate `navbar.json` and `homePage.json` file, but not if using the Symfony translator.
 
 After installing the libray, it auto binds a `Symfony\Component\Translation\Translator` instance that loads the correct json file for the current app locale. By default it assumes that your files are located in the `lang/{locale}.json` folder and the default fallback locale is `en`. 
 
 You can overide this by publishing the config file from the service provider and edit the `symfony-translation.translationsFolder` and `symfony-translation.defaultLocale` keys.
 
-This package also includes a blade directive `@sTranslate` that calls the `$translater->trans` function and a `SymfonyTranslation::trans()` facade.
+This package also includes a blade directive `@sTranslate` that calls the `$translater->trans` function and a `SymfonyTranslation::trans()` facade arround the `Translator` object.
